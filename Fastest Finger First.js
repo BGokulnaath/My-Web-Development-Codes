@@ -72,57 +72,6 @@ function minuteSecondTime(time){
     }
 }
 
-// Making a functional component for the squares
-function Square(element) {
-    this.element = element;
-
-    this.handleClick = function (evt) {
-        if (Number(evt.target.getAttribute('data-counter')) === 0) {
-            evt.target.textContent = Number(evt.target.textContent) + 20;
-            evt.target.setAttribute('data-counter', Number(evt.target.getAttribute('data-counter'))+1)
-        }
-        else if (Number(evt.target.getAttribute('data-counter')) === 1) {
-            if (evt.target.textContent === '40') {
-                evt.target.style.backgroundColor = "white"
-                evt.target.textContent = ""
-                popUp()
-            }
-            else {
-                evt.target.style.backgroundColor = "#232323"
-                evt.target.textContent = ""
-            }
-        }
-    }
-}
-
-//On clicking the numbers
-for(var i = 0 ; i < 20 ; i++){
-//     squares[i].addEventListener("click", function(event){
-//         event.target.textContent = Number(event.target.textContent) + 20;
-//         event.target.addEventListener("click", function(){
-//             if(this.textContent === "40"){
-//                 this.style.backgroundColor = "white";
-//                 this.textContent = "";
-//                 popUp();
-//             }else{
-//                 this.style.backgroundColor = "#232323";
-//                 this.textContent = "";
-//             }
-//         });
-//     });
-    
-    SquareArray.push(new Square(squares[i]));
-}
-
-SquareArray.forEach(item => {
-    item.element.addEventListener('click', item.handleClick)
-})
-
-function popUp(){
-    alert("Done with the game!!!");
-}
-
-//When all the squares have disappeared, stop the timer
 
 
 
